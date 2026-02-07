@@ -1,0 +1,24 @@
+┌────────────────────┐            ┌────────────────────┐
+│     CUSTOMERS      │            │      PRODUCTS      │
+│--------------------│            │--------------------│
+│ * customer_id (PK) │            │ * product_id (PK)  │
+│   first_name       │            │   product_name     │
+│   last_name        │            │   category         │
+│   region           │            │   price            │
+│   signup_date      │            │                    │
+└────────┬───────────┘            └────────┬───────────┘
+         │                                  │
+         │                                  │
+         │                                  │
+         │                                  │
+         ▼                                  ▼
+             ┌──────────────────────────┐
+             │          SALES           │
+             │--------------------------│
+             │ * sale_id (PK)           │
+             │   customer_id (FK) → C   │
+             │   product_id (FK) → P    │
+             │   sale_date              │
+             │   quantity               │
+             │   total_amount           │
+             └──────────────────────────┘
